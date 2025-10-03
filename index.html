@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-retro-futuristic-grid-in-a-seamless-loop-42862-large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="game-container">
+        <h1>PING PONG</h1>
+        <canvas id="gameCanvas"></canvas> <div id="menu-overlay">
+            <div id="main-menu" class="menu-screen active">
+                <button id="single-player-btn">Single Player</button>
+                <button id="two-player-btn">Two Player</button>
+                <button id="high-scores-btn">High Scores</button>
+                <button id="options-btn">Options</button>
+                <button id="about-btn">About</button>
+            </div>
+
+            <div id="difficulty-menu" class="menu-screen">
+                <button id="easy-btn" data-difficulty="easy">Easy</button>
+                <button id="medium-btn" data-difficulty="medium">Medium</button>
+                <button id="hard-btn" data-difficulty="hard">Hard</button>
+                <button class="back-btn">Back</button>
+            </div>
+
+            <div id="high-scores-screen" class="menu-screen">
+                <h2>HIGH SCORES</h2>
+                <ol id="high-scores-list"></ol>
+                <button class="back-btn">Back</button>
+            </div>
+
+            <div id="options-screen" class="menu-screen">
+                <h2>OPTIONS</h2>
+                <button id="toggle-music-btn">Music: ON</button>
+                <button id="toggle-sfx-btn">SFX: ON</button>
+                <button class="back-btn">Back</button>
+            </div>
+             
+            <div id="about-screen" class="menu-screen">
+                <h2>ABOUT</h2>
+                <p>Player 1 (Left): W (Up), S (Down)</p>
+                <p>Player 2 (Right): I (Up), K (Down)</p>
+                <p>A classic Pong game by Deepak</p>
+                <button class="back-btn">Back</button>
+            </div>
+
+            <div id="game-over-screen" class="menu-screen">
+                <h2 id="winner-text"></h2>
+                <p>Press Enter to return to Menu</p>
+            </div>
+
+            <div id="pause-menu" class="menu-screen">
+                <h2>PAUSED</h2>
+                <button id="resume-btn">Resume</button>
+                <button id="exit-btn">Exit to Menu</button>
+            </div>
+        </div>
+        <div id="countdown-overlay"></div>
+
+    </div>
+
+    <audio id="menu-music" src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3" loop></audio>
+    <audio id="game-music" src="https://www.bensound.com/bensound-music/bensound-extremeaction.mp3" loop></audio>
+    <audio id="paddle-hit-sfx" src="tennis-ball-hit-386155.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

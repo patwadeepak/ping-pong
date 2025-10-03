@@ -1,0 +1,114 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: blur(5px) brightness(0.4);
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #0f0;
+    text-shadow: 3px 3px #f0f, -3px -3px #0ff;
+    z-index: 10;
+}
+
+canvas {
+    display: block; /* Removes tiny space below canvas */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Border is now drawn inside the canvas via JS */
+}
+
+#menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-screen.active {
+    display: flex;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #111;
+    color: #0f0;
+    border: 2px solid #0f0;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #f0f;
+    margin-bottom: 20px;
+}
+
+p, ol {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    text-align: center;
+}
+
+#high-scores-list {
+    list-style-type: decimal;
+    padding-left: 40px;
+}
+
+#countdown-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    color: #fff;
+    text-shadow: 4px 4px #000, 0 0 25px #0f0;
+    z-index: 20; /* Ensures it's on top of the canvas */
+    display: none; /* Hidden by default */
+    pointer-events: none; /* Clicks go through it */
+}
